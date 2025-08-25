@@ -108,13 +108,33 @@ function App() {
               );
             })}
         </ul>
-        <div>
-          <button onClick={() => dispatch(filter("all"))}>All</button>
-          <button onClick={() => dispatch(filter("active"))}>Active</button>
-          <button onClick={() => dispatch(filter("completed"))}>
-            Completed
-          </button>
+        <div className="faw">
+          <div>items left: {todos.length} </div>
+          <div className="btn-awe">
+            <button
+              className="btn-all active"
+              onClick={() => dispatch(filter("all"))}
+            >
+              All
+            </button>
+            <button
+              className="btn-active "
+              onClick={() => dispatch(filter("active"))}
+            >
+              Active
+            </button>
+            <button
+              className="btn-completed "
+              onClick={() => dispatch(filter("completed"))}
+            >
+              Completed
+            </button>
+          </div>
+          <div>
+            <button className="btn-completed ">Clear Completed</button>
+          </div>
         </div>
+        <div className="drag-hint ">Drag and drop to reorder list</div>
       </div>
     </div>
   );
