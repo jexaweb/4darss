@@ -64,11 +64,10 @@ function App() {
               <label className="form-label">Completed</label>
             </div> */}
             <div className="form-group">
-              <input
-                name="completed"
-                type="checkbox"
-                className="checkbox__heder"
-              />
+              <label class="checkbox">
+                <input name="completed" type="checkbox" className="checkbox" />
+                <span class="checkmark"></span>
+              </label>
 
               <input
                 name="title"
@@ -89,17 +88,20 @@ function App() {
                     className="todo-title"
                     style={{ opacity: todo.completed ? 0.5 : 1 }}
                   >
-                    <input
-                      name="completed"
-                      type="checkbox"
-                      className="checkbox__heder"
-                    />
+                    <label class="checkbox">
+                      <input
+                        name="completed"
+                        type="checkbox"
+                        className="checkbox__heder"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
                     {todo.text}
 
                     {todo.title}
                     <button
                       className=" btn-danger "
-                      onClick={() => dispatch(removeTodo(todo.id))}
+                      onDoubleClick={() => dispatch(removeTodo(todo.id))}
                     >
                       <i class="fa-solid fa-xmark"></i>
                     </button>
